@@ -44,9 +44,9 @@ int main() {
     scanf("%d", &ano_final);
 
     // Calcular la depreciación anual usando la tasa fija del 25%
-    depreciacion_anual = (valor_inicial - valor_residual) * 0.25;
+    depreciacion_anual = (valor_inicial) * 0.25;
 
-    // Muestra los resultados en la tabla de depreciación
+    // Muestra los resultados una tabla de depreciación
     printf("\nAno\tDepreciacion Acumulada (USD)\tValor Real Anual (USD)\n");
 
     // Inicializar la depreciación acumulada
@@ -58,10 +58,10 @@ int main() {
         depreciacion_acumulada += depreciacion_anual;
         valor_real = valor_inicial - depreciacion_acumulada;
 
-        // Comprobación de que el valor del automovil no es menor al valor residual
+        // Comprobación de que el valor del automovil no es menor al valor residual manteniendo el valor minimo esperado
         if (valor_real < valor_residual) {
             valor_real = valor_residual;
-            // Si el valor real ha alcanzado el valor de rescate, no aumentar más la depreciación acumulada
+            // Si el valor real ha alcanzado el valor de residual, no aumentar más la depreciación acumulada, si no se ingresa un valor residual minimo propuesto solo queda la depreciación acumulada
             depreciacion_acumulada = valor_inicial - valor_residual;
         }
 
@@ -74,14 +74,15 @@ int main() {
         }
     }
 
-    // Explicación si el saldo es positivo y tenemos una ganancia
+    // Explicación si el saldo es positivo (ya que no se termino de depreciar en el tiempo) y tenemos una ganancia para la venta del activo fijo
     if (valor_real > valor_residual) {
-        printf("\nAl final del periodo de depreciacion, el automovil todavía tiene un valor residual que puede ser recuperado al venderlo.\n");
+        printf("\nFin de la depreciacion, el automovil fue considerado con un valor residual para su venta.\n");
+    // Explicación si la depreciación se realizo en su totalidad y aun es considerada con un valor residual que represente una ganancia    
     } else if (valor_real == valor_residual) {
-        printf("\nAl final del periodo de depreciacion, el automovil ha alcanzado su valor de rescate estimado.\n");
+        printf("\nFin de la depreciacion, el automovil puede tener un valor residual independientemente de su depreciacion.\n");
     } else {
-        // En la práctica contable, esta es una mala praxis por lo que se menciona lo siguiente
-        printf("\nAl final del periodo de depreciacion, el automovil tiene un valor residual negativo, lo que indica que podria haber sido sobrevaluado o su vida util subestimada.\n");
+        // En la práctica contable, se debe revisar la vida util y el valor residual
+        printf("\nAl final del periodo de depreciacion, el automovil tiene un valor residual negativo, sujeto a revision en caso de perdida o sujeto a reevaluacion.\n");
     }
 
     //Salir
