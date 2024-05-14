@@ -9,6 +9,7 @@
      Autor: Verónica Mejía López
      Fecha: 11/05/2024
 */
+
 #include <stdio.h>
 
 int main() {
