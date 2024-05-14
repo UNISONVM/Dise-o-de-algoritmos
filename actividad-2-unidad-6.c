@@ -1,5 +1,5 @@
 /*
-    Nombre del programa: Signos zodiacales
+Nombre del programa: Signos zodiacales
     --------------------------------------------
     Descripción
      Este programa indica que signo zodiacal es de acuerdo con la fecha de nacimiento
