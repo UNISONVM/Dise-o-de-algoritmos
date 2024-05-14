@@ -9,6 +9,7 @@
      Autor: Verónica Mejía López
      Fecha: 11/05/2024
 */
+#include <stdio.h>
 
 int main() {
     int dia, mes; // Variables para almacenar el día y mes de nacimiento del usuario.
@@ -57,3 +58,4 @@ int main() {
 
     return 0;
 }
+
